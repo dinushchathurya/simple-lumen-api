@@ -21,7 +21,7 @@ class ProductController extends Controller
         $products = Product::all();
         return response()->json($products);
     }
-    
+
     public function create(Request $request)
     {
         $product = new Product;
@@ -30,6 +30,12 @@ class ProductController extends Controller
         $product->description= $request->description;
 
         $product->save();
+        return response()->json($product);
+    }
+
+    public function show($id)
+    {
+        $product = Product::find($id);
         return response()->json($product);
     }
 }
