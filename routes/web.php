@@ -17,6 +17,15 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+/* generate APP_KEY */
 $router->get('/key', function() {
     return \Illuminate\Support\Str::random(32);
+});
+
+$router->group(['prefix'=>'api/v1'], function() use($router){
+    $router->get('/items', 'ProductController@index');
+    $router->post('/items', 'ProductController@create');
+    $router->get('/items/{id}', 'ProductController@show');
+    $router->put('/items/{id}', 'ProductController@update');
+    $router->delete('/items/{id}', 'ProductController@destroy');
 });
