@@ -8,9 +8,9 @@ Method | Route | Description
 --- | --- | ---
 `POST` | `/api/v1/items` | Create an item
 `GET` | `/api/v1/items` | Get All item
-`GET` | `/api/vi/:id` | Get a single item
-`PUT` | `/api/v1/:id` | Update item
-`DELETE` | `/api/v1/:id` | Delete a item
+`GET` | `/api/vi/items/:id` | Get a single item
+`PUT` | `/api/v1/items/:id` | Update item
+`DELETE` | `/api/v1/items/:id` | Delete a item
 
 ## Setup
  
